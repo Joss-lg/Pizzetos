@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "414059853670",
+    "project_id": "pizzetos-4398f",
+    "storage_bucket": "pizzetos-4398f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414059853670:android:bf642322ad14009339faa7",
+        "android_client_info": {
+          "package_name": "com.tuusuario.pizzetos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtleIGbETmupOkzkvfzgTQMtjmJf4WlXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
