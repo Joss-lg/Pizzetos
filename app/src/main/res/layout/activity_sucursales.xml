@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/madera"
+    tools:context=".Sucursales">
+
+    <!-- Logo de Pizzetos -->
+    <ImageView
+        android:id="@+id/logoHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:contentDescription="Logo de Pizzetos"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logopizzetos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tarjeta centrada -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_sucursales"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="-120dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoHeader"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Contenedor con LinearLayout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <!-- Icono de ubicación -->
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_location"
+                android:layout_gravity="center" />
+
+            <!-- Texto de sucursales -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:text="VER SUCURSALES ACTIVAS"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+            <!-- Imagen debajo del texto -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sucursales"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Botón Regresar fuera de la tarjeta y en la parte inferior -->
+    <Button
+        android:id="@+id/btn_regresar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:textColor="#FFFFFF"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="56dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
