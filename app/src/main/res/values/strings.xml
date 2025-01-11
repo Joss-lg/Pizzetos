@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Pizzetos</string>
+    <string-array name="ingredientes_array">
+        <item>Pastor</item>
+        <item>BBQ</item>
+        <item>Mexicana</item>
+        <item>Hawaiana</item>
+        <item>Peperoni</item>
+        <item>Carnes Frías</item>
+    </string-array>
+
+    <string-array name="tamanos_array">
+        <item>Chica</item>
+        <item>Mediana</item>
+        <item>Grande</item>
+        <item>Familiar</item>
+    </string-array>
+
+
 </resources>
