@@ -13,6 +13,15 @@
         android:theme="@style/Theme.Pizzetos"
         tools:targetApi="31">
         <activity
+            android:name=".Consultar_Pedido"
+            android:exported="false" />
+        <activity
+            android:name=".Realizar_Pedidos"
+            android:exported="false" />
+        <activity
+            android:name=".Sucursales"
+            android:exported="false" />
+        <activity
             android:name=".Realizar_pedido"
             android:exported="false" />
         <activity

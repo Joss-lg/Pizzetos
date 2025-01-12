@@ -1,6 +1,20 @@
 <resources>
-    <string name="app_name">Pizzetos</string>
-    <string-array name="ingredientes_array">
+    <!-- Títulos y textos generales -->
+    <string name="app_name">Pizzería</string>
+    <string name="formulario_pedido">Formulario de Pedido</string>
+    <string name="nombre_cliente">Nombre del Cliente</string>
+    <string name="telefono_cliente">Número de Teléfono</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="tamano_pizza">Tamaño de Pizza</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="domicilio">Domicilio</string>
+    <string name="metodo_pago">Método de Pago</string>
+    <string name="efectivo">Efectivo</string>
+    <string name="tarjeta">Tarjeta</string>
+    <string name="enviar_pedido">Enviar Pedido</string>
+
+    <!-- Ingredientes -->
+    <string-array name="ingredientes_lista">
         <item>Pastor</item>
         <item>BBQ</item>
         <item>Mexicana</item>
@@ -9,12 +23,11 @@
         <item>Carnes Frías</item>
     </string-array>
 
-    <string-array name="tamanos_array">
+    <!-- Tamaños -->
+    <string-array name="tamano_lista">
         <item>Chica</item>
         <item>Mediana</item>
         <item>Grande</item>
         <item>Familiar</item>
     </string-array>
-
-
 </resources>
