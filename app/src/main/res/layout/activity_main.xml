@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
 
     <!-- Título de la pantalla -->
@@ -69,7 +68,7 @@
 
     <!-- Botón de ingresar -->
     <Button
-        android:id="@+id/btn_ingresar"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="54dp"
         android:backgroundTint="#FF914D"
@@ -91,7 +90,7 @@
         android:text="¿No tienes una cuenta? Regístrate"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/btn_ingresar"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
