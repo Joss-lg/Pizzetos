@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Pizzetos"
         tools:targetApi="31">
         <activity
+            android:name=".Register"
+            android:exported="true" />
+        <activity
             android:name=".Consultar_Pedido"
             android:exported="false" />
         <activity
@@ -22,14 +25,11 @@
             android:name=".Sucursales"
             android:exported="false" />
         <activity
-            android:name=".Realizar_pedido"
-            android:exported="false" />
-        <activity
             android:name=".Home"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
