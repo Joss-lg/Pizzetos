@@ -21,7 +21,7 @@ public class admin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_admin); // Asegúrate de que el layout sea el correcto
         setTitle("Admin Login");
 
         // Enlazar elementos del diseño
@@ -33,21 +33,36 @@ public class admin extends AppCompatActivity {
         adminLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emailInput = adminEmail.getText().toString().trim();
-                String passwordInput = adminPassword.getText().toString().trim();
-
-                if (emailInput.isEmpty() || passwordInput.isEmpty()) {
-                    Toast.makeText(admin.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
-                } else if (emailInput.equals(ADMIN_EMAIL) && passwordInput.equals(ADMIN_PASSWORD)) {
-                    // Credenciales correctas
-                    Toast.makeText(admin.this, "Bienvenido Administrador", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(admin.this, menuadmin.class));
-                    finish();
-                } else {
-                    // Credenciales incorrectas
-                    Toast.makeText(admin.this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-                }
+                validateAdminLogin();
             }
         });
+    }
+
+    private void validateAdminLogin() {
+        String emailInput = adminEmail.getText().toString().trim();
+        String passwordInput = adminPassword.getText().toString().trim();
+
+        if (emailInput.isEmpty()) {
+            adminEmail.setError("El correo es obligatorio");
+            adminEmail.requestFocus();
+            return;
+        }
+
+        if (passwordInput.isEmpty()) {
+            adminPassword.setError("La contraseña es obligatoria");
+            adminPassword.requestFocus();
+            return;
+        }
+
+        if (emailInput.equals(ADMIN_EMAIL) && passwordInput.equals(ADMIN_PASSWORD)) {
+            // Credenciales correctas
+            Toast.makeText(admin.this, "Bienvenido Administrador", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(admin.this, menuadmin.class); // Asegúrate de que `MenuAdmin` existe
+            startActivity(intent);
+            finish();
+        } else {
+            // Credenciales incorrectas
+            Toast.makeText(admin.this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+        }
     }
 }
