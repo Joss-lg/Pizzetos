@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private EditText correo, contrasena;
-    private Button btn_login;
+    private Button btn_login, btn_admin;
     private TextView tvRegister;
     private FirebaseAuth mAuth;
 
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         correo = findViewById(R.id.correo);
         contrasena = findViewById(R.id.contrasena);
         btn_login = findViewById(R.id.btn_login);
+        btn_admin = findViewById(R.id.btn_admin);
         tvRegister = findViewById(R.id.tv_User_reg_log);
 
         // Verificar si se reciben datos del registro
@@ -60,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     loginUser(emailUser, passUser);
                 }
+            }
+        });
+
+        // Listener para el botón de login del administrador
+        btn_admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, admin.class); // Cambia "Admin.class" al nombre correcto de tu actividad de administrador
+                startActivity(intent);
             }
         });
 
