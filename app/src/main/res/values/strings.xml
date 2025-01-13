@@ -25,9 +25,9 @@
 
     <!-- Tamaños -->
     <string-array name="tamano_lista">
-        <item>Chica</item>
-        <item>Mediana</item>
-        <item>Grande</item>
-        <item>Familiar</item>
+        <item>Chica($160)</item>
+        <item>Mediana($235)</item>
+        <item>Grande($295)</item>
+        <item>Familiar($355)</item>
     </string-array>
 </resources>
