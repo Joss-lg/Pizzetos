@@ -12,6 +12,7 @@
     <!-- Logo Encabezado -->
 
     <!-- Título Inicio -->
+
     <ImageView
         android:id="@+id/logoHeader"
         android:layout_width="wrap_content"
@@ -131,6 +132,7 @@
 
             <ImageView
                 android:layout_width="48dp"
+                android:src="@drawable/ic_notas"
                 android:layout_height="48dp"
                 />
 

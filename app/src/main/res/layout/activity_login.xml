@@ -5,17 +5,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/difuminado"
     tools:context=".LoginActivity">
 
-    <!-- Título de la pantalla -->
+    <!-- Logo de Pizzetos -->
+    <ImageView
+        android:id="@+id/register"
+        android:layout_width="383dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="Logo de Pizzetos"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pizzetos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Línea decorativa debajo del título -->
-
-    <!-- Campo para ingresar el correo -->
-
-    <!-- Campo para ingresar la contraseña -->
-
+    <!-- Título "Iniciar Sesión" -->
     <TextView
         android:id="@+id/Inicio"
         android:layout_width="wrap_content"
@@ -30,6 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Línea decorativa -->
     <View
         android:id="@+id/decorative_line"
         android:layout_width="64dp"
@@ -41,6 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Inicio" />
 
+    <!-- Campo de Correo -->
     <EditText
         android:id="@+id/correo"
         android:layout_width="0dp"
@@ -58,6 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/decorative_line" />
 
+    <!-- Campo de Contraseña -->
     <EditText
         android:id="@+id/contrasena"
         android:layout_width="0dp"
@@ -75,6 +84,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/correo" />
 
+    <!-- Botón Ingresar -->
     <Button
         android:id="@+id/btn_ingresar"
         android:layout_width="0dp"
@@ -84,6 +94,7 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="#FF914D"
         android:text="Ingresar"
+        android:textSize="20sp"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,6 +102,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/contrasena" />
 
-
+    <!-- Frase "¿No estás registrado?" -->
+    <TextView
+        android:id="@+id/registroText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿No estás registrado?"
+        android:textColor="#FF914D"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_ingresar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
