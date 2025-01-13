@@ -1,9 +1,10 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Pizzetos" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <style name="Theme.Pizzetos" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Hacer la barra de estado transparente -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- Cambiar el color de fondo de la barra de navegación -->
+        <item name="android:navigationBarColor">@color/white</item>
+        <!-- Hacer que el texto en la barra de estado sea oscuro -->
+        <item name="android:windowLightStatusBar">true</item>
     </style>
-
-    <style name="Theme.Pizzetos" parent="Base.Theme.Pizzetos" />
 </resources>

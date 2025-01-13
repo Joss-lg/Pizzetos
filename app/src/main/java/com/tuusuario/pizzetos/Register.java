@@ -73,3 +73,41 @@ public class Register extends AppCompatActivity {
                 });
     }
 }
+
+//import android.app.DatePickerDialog;
+//import android.os.Bundle;
+//import android.widget.Button;
+//import android.widget.DatePicker;
+//import androidx.appcompat.app.AppCompatActivity;
+//import java.util.Calendar;
+//
+//public class Register extends AppCompatActivity {
+//
+//    private Button btnFechaNacimiento;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_register);
+//
+//        btnFechaNacimiento = findViewById(R.id.btn_fecha_nacimiento);
+//
+//        btnFechaNacimiento.setOnClickListener(view -> {
+//            Calendar calendar = Calendar.getInstance();
+//            int year = calendar.get(Calendar.YEAR);
+//            int month = calendar.get(Calendar.MONTH);
+//            int day = calendar.get(Calendar.DAY_OF_MONTH);
+//
+//            DatePickerDialog datePickerDialog = new DatePickerDialog(
+//                Register.this,
+//                (view1, year1, month1, dayOfMonth) -> {
+//                    // Aquí puedes manejar la fecha seleccionada
+//                    btnFechaNacimiento.setText(dayOfMonth + "/" + (month1 + 1) + "/" + year1);
+//                },
+//                year, month, day);
+//
+//            datePickerDialog.show();
+//        });
+//    }
+//} SEGUN ES EL CODIGO PARA QUE AL PRESIONAR EL QUE DICE "SELECCIONA TU FECHA DE NACIMIENTO SE ABRA EL CALENDARIO//
+
