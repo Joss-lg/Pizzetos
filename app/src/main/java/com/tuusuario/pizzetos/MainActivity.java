@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Asegúrate de usar el layout correcto
+        setContentView(R.layout.activity_main); // Asegúrate de usar ejhjl layout correcto
         setTitle("Login");
 
         // Inicializar Firebase Auth
