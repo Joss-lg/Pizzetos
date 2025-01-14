@@ -23,6 +23,8 @@
     <!-- Título de la pantalla -->
 
     <!-- Línea decorativa debajo del título -->
+
+    <!-- Prueba -->
     <TextView
         android:id="@+id/tv_login"
         android:layout_width="wrap_content"
