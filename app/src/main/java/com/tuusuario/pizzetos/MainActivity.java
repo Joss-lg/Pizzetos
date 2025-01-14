@@ -20,14 +20,14 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private EditText correo, contrasena;
-    private Button btn_login;
+    private Button btn_login, btn_admin;
     private TextView tvRegister;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Asegúrate que este layout coincida
+        setContentView(R.layout.activity_main);
         setTitle("Login");
 
         // Inicializar Firebase Auth
@@ -37,7 +37,17 @@ public class MainActivity extends AppCompatActivity {
         correo = findViewById(R.id.correo);
         contrasena = findViewById(R.id.contrasena);
         btn_login = findViewById(R.id.btn_login);
+        btn_admin = findViewById(R.id.btn_admin);
         tvRegister = findViewById(R.id.tv_User_reg_log);
+
+        // Verificar si se reciben datos del registro
+        Intent intent = getIntent();
+        if (intent != null) {
+            String nombre = intent.getStringExtra("nombre");
+            if (nombre != null) {
+                Toast.makeText(this, "¡Registro exitoso! Bienvenido, " + nombre, Toast.LENGTH_SHORT).show();
+            }
+        }
 
         // Listener para el botón de iniciar sesión
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -47,10 +57,19 @@ public class MainActivity extends AppCompatActivity {
                 String passUser = contrasena.getText().toString().trim();
 
                 if (emailUser.isEmpty() || passUser.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Ingresar los datos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Por favor, ingresa tus datos", Toast.LENGTH_SHORT).show();
                 } else {
                     loginUser(emailUser, passUser);
                 }
+            }
+        });
+
+        // Listener para el botón de login del administrador
+        btn_admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, admin.class);
+                startActivity(intent);
             }
         });
 
@@ -58,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Register.class)); // Cambia si tienes otra clase de registro
+                startActivity(new Intent(MainActivity.this, Register.class));
             }
         });
     }
@@ -72,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             if (user != null) {
                                 Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(MainActivity.this, Home.class)); // Cambia si tienes otra actividad para la pantalla principal
+                                startActivity(new Intent(MainActivity.this, Home.class));
                                 finish();
                             }
                         } else {
@@ -86,8 +105,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
+        // Verificar si hay un usuario autenticado
         if (user != null) {
-            startActivity(new Intent(MainActivity.this, Home.class)); // Cambia si tienes otra actividad
+            // Usuario ya autenticado, redirigir a Home
+            Intent intent = new Intent(MainActivity.this, Home.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             finish();
         }
     }
