@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Home extends AppCompatActivity {
 
     private CardView cardSucursales, cardRealizarPedido, cardConsultarPedido, cardCerrarSesion;
@@ -56,11 +58,14 @@ public class Home extends AppCompatActivity {
         cardCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Cerrar sesión y redirigir al inicio de sesión
+                // Cerrar sesión de Firebase
+                FirebaseAuth.getInstance().signOut();
+
+                // Redirigir al inicio de sesión
                 Intent intent = new Intent(Home.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                finish();
+                finish(); // Finaliza la actividad actual
             }
         });
     }
