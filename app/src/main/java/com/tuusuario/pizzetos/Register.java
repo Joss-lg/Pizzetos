@@ -30,14 +30,12 @@ public class Register extends AppCompatActivity {
     RadioButton rbMasculino, rbFemenino;
     FirebaseAuth mAuth;
 
-    private String fechaNacimiento; // Variable para almacenar la fecha seleccionada
+    private String fechaNacimiento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register); // Asegúrate de que el layout sea correcto
-
-        setTitle("Registro");
+        setContentView(R.layout.activity_register);
 
         // Inicializar FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
@@ -53,37 +51,22 @@ public class Register extends AppCompatActivity {
         rbMasculino = findViewById(R.id.rb_masculino);
         rbFemenino = findViewById(R.id.rb_femenino);
 
-        // Configurar el botón para seleccionar fecha de nacimiento
-        btnFechaNacimiento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                abrirDatePicker();
-            }
-        });
+        // Configurar botón de fecha
+        btnFechaNacimiento.setOnClickListener(v -> abrirDatePicker());
 
-        // Configurar el botón de registro
-        btnRegistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registrarUsuario();
-            }
-        });
+        // Configurar botón de registro
+        btnRegistro.setOnClickListener(v -> registrarUsuario());
     }
 
     private void abrirDatePicker() {
-        // Obtener la fecha actual para el DatePicker
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        // Crear y mostrar el DatePickerDialog
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                fechaNacimiento = dayOfMonth + "/" + (month + 1) + "/" + year;
-                btnFechaNacimiento.setText(fechaNacimiento); // Mostrar la fecha seleccionada en el botón
-            }
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view, year1, month1, dayOfMonth) -> {
+            fechaNacimiento = dayOfMonth + "/" + (month1 + 1) + "/" + year1;
+            btnFechaNacimiento.setText(fechaNacimiento);
         }, year, month, day);
 
         datePickerDialog.show();
@@ -108,21 +91,16 @@ public class Register extends AppCompatActivity {
 
         String sexo = (sexoId == R.id.rb_masculino) ? "Masculino" : "Femenino";
 
-        // Registrar el usuario en Firebase Authentication
         mAuth.createUserWithEmailAndPassword(emailUser, passUser)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Register.this, "Registro exitoso. Por favor, inicia sesión.", Toast.LENGTH_LONG).show();
-                            // Redirigir al usuario al MainActivity
-                            Intent intent = new Intent(Register.this, MainActivity.class);
-                            startActivity(intent);
-                            finish(); // Finalizar la actividad actual
-                        } else {
-                            Log.e("RegisterActivity", "Error: " + task.getException());
-                            Toast.makeText(Register.this, "Error al registrarse", Toast.LENGTH_SHORT).show();
-                        }
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(Register.this, "Registro exitoso. Por favor, inicia sesión.", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(Register.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Log.e("RegisterActivity", "Error: " + task.getException());
+                        Toast.makeText(Register.this, "Error al registrarse", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
