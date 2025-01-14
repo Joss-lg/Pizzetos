@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Asegúrate de usar el layout correcto
+        setContentView(R.layout.activity_main);
         setTitle("Login");
 
         // Inicializar Firebase Auth
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         btn_admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, admin.class); // Cambia "Admin.class" al nombre correcto de tu actividad de administrador
+                Intent intent = new Intent(MainActivity.this, admin.class);
                 startActivity(intent);
             }
         });
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             if (user != null) {
                                 Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(MainActivity.this, Home.class)); // Cambia a la actividad principal
+                                startActivity(new Intent(MainActivity.this, Home.class));
                                 finish();
                             }
                         } else {
@@ -105,8 +105,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
+        // Verificar si hay un usuario autenticado
         if (user != null) {
-            startActivity(new Intent(MainActivity.this, Home.class)); // Redirige a la actividad principal si el usuario ya está autenticado
+            // Usuario ya autenticado, redirigir a Home
+            Intent intent = new Intent(MainActivity.this, Home.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             finish();
         }
     }
