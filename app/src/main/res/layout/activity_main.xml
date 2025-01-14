@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/orange_oscuro"
+    android:background="@drawable/madera_clarito"
     tools:context=".MainActivity">
 
     <ImageView
@@ -38,7 +38,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <View
         android:layout_width="64dp"
         android:layout_height="2dp"
@@ -47,6 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
+
 
     <!-- Campo para ingresar el correo -->
     <EditText
