@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/naranja_difuminado"
+    android:background="@drawable/difuminado"
     tools:context=".Realizar_Pedidos">
 
     <!-- Logo Encabezado -->
@@ -16,7 +16,7 @@
         android:layout_marginTop="26dp"
         android:contentDescription="Logo de Pizzetos"
         android:scaleType="fitCenter"
-        android:src="@drawable/logopizzetos"
+        android:src="@drawable/pizzetos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
