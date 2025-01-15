@@ -24,6 +24,7 @@
 
     <!-- Tarjeta centrada -->
     <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_sucursales"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -44,54 +45,56 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:padding="22dp">
+            android:gravity="center"
+        android:orientation="vertical"
+        android:padding="22dp">
 
-            <!-- Icono de ubicación -->
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_location"
-                android:layout_gravity="center" />
+        <!-- Icono de ubicación -->
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_location"
+            android:layout_gravity="center" />
 
-            <!-- Texto de sucursales -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:text="¡VISITA NUESTRA SUCURSAL!"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_gravity="center" />
+        <!-- Texto de sucursales -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:text="¡VISITA NUESTRA SUCURSAL!"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
 
-            <!-- Imagen debajo del texto -->
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/sucursales"
-                android:layout_gravity="center" />
+        <!-- RecyclerView para la galería de fotos -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewGallery"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:padding="4dp"
+            android:clipToPadding="false"
+            android:gravity="center"
+        tools:listitem="@layout/item_gallery" />
 
-        </LinearLayout>
+    </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
 
-    <!-- Botón Regresar fuera de la tarjeta y en la parte inferior -->
-    <Button
-        android:id="@+id/btn_regresar"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Volver"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:backgroundTint="#ED7C3E"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="56dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<Button
+android:id="@+id/btn_regresar"
+android:layout_width="200dp"
+android:layout_height="wrap_content"
+android:text="Volver"
+android:textColor="#FFFFFF"
+android:textStyle="bold"
+android:backgroundTint="#ED7C3E"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintBottom_toBottomOf="parent"
+android:layout_marginBottom="56dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,4 +30,6 @@
         <item>Grande($295)</item>
         <item>Familiar($355)</item>
     </string-array>
+    <string name="photo_description">Descripción de la foto</string>
+
 </resources>
