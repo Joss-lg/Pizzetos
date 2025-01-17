@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView; // Asegúrate de importar esto si usas un ImageView para el ícono
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -52,6 +53,19 @@ public class Sucursales extends AppCompatActivity {
                 Intent intent = new Intent(Sucursales.this, Home.class);
                 startActivity(intent);
                 finish(); // Opcional: Para cerrar la actividad actual y evitar que el usuario regrese con el botón atrás
+            }
+        });
+
+        // Referencia al ícono de ubicación
+        ImageView locationIcon = findViewById(R.id.icon_ubicacion); // Asegúrate de que el ID sea correcto en el XML
+
+        // Configurar el OnClickListener para el ícono de ubicación
+        locationIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Iniciar la actividad del mapa
+                Intent intent = new Intent(Sucursales.this, Mapa_prueba.class);
+                startActivity(intent);
             }
         });
     }
