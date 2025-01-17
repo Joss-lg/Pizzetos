@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/madera"
+    android:background="@drawable/suc_back"
     tools:context=".Sucursales">
 
     <!-- Logo de Pizzetos -->
@@ -13,10 +13,10 @@
         android:id="@+id/logoHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="36dp"
         android:contentDescription="Logo de Pizzetos"
         android:scaleType="fitCenter"
-        android:src="@drawable/logopizzetos"
+        android:src="@drawable/pizzetos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,12 +24,13 @@
 
     <!-- Tarjeta centrada -->
     <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_sucursales"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="-120dp"
+        android:layout_marginTop="-25dp"
         android:clickable="true"
         android:focusable="true"
         app:cardCornerRadius="15dp"
@@ -44,16 +45,28 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:orientation="vertical"
             android:padding="22dp">
 
-            <!-- Icono de ubicación -->
+            <!-- Ícono de ubicación -->
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_location"
-                android:layout_gravity="center" />
+                android:id="@+id/icon_ubicacion"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_location"
+            android:layout_gravity="center"
+            android:contentDescription="@string/descripcion_icono_ubicacion" />
+
+            <View
+                android:id="@+id/decorative_line"
+                android:layout_width="64dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Inicio" />
 
             <!-- Texto de sucursales -->
             <TextView
@@ -67,20 +80,22 @@
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
-            <!-- Imagen debajo del texto -->
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <!-- RecyclerView para la galería de fotos -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGallery"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:layout_marginTop="16dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/sucursales"
-                android:layout_gravity="center" />
+                android:padding="4dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                tools:listitem="@layout/item_gallery" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <!-- Botón Regresar fuera de la tarjeta y en la parte inferior -->
+    <!-- Botón "Volver" -->
     <Button
         android:id="@+id/btn_regresar"
         android:layout_width="200dp"
@@ -92,6 +107,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="56dp"/>
+        android:layout_marginBottom="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

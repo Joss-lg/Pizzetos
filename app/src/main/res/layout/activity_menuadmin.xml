@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/orange_oscuro"
+    android:background="@drawable/b_admin"
     tools:context=".menuadmin">
 
     <!-- Imagen de encabezado -->
@@ -75,7 +75,7 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/icono_consulta" />
+                android:src="@drawable/ic_lupa" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,7 +115,7 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/cerrar_sesion" />
+                android:src="@drawable/ic_cerrasesion" />
 
             <TextView
                 android:layout_width="wrap_content"

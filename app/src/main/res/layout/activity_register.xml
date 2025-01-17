@@ -5,20 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/orange_oscuro"
+    android:background="@drawable/suc_back"
     tools:context=".Register">
-
-    <ImageView
-        android:id="@+id/register"
-        android:layout_width="276dp"
-        android:layout_height="111dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="Logo de Pizzetos"
-        android:scaleType="fitCenter"
-        android:src="@drawable/pizzetos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -26,17 +14,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="200dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/register">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-
             android:padding="36dp">
 
             <!-- Campo Nombre -->
@@ -46,7 +33,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Nombre"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:contentDescription="Campo para ingresar el nombre" />
 
             <!-- Campo Correo -->
             <EditText
@@ -55,7 +43,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Correo"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:contentDescription="Campo para ingresar el correo" />
 
             <!-- Campo Contraseña -->
             <EditText
@@ -64,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:contentDescription="Campo para ingresar la contraseña" />
 
             <!-- Campo Teléfono -->
             <EditText
@@ -73,14 +63,16 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Teléfono"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:contentDescription="Campo para ingresar el teléfono" />
 
             <!-- Campo Sexo -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Sexo" />
+                android:text="Sexo"
+                android:contentDescription="Etiqueta para selección de sexo" />
 
             <RadioGroup
                 android:id="@+id/sexo"
@@ -92,23 +84,24 @@
                     android:id="@+id/rb_masculino"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Masculino" />
+                    android:text="Masculino"
+                    android:contentDescription="Opción masculino" />
 
                 <RadioButton
                     android:id="@+id/rb_femenino"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Femenino" />
-
-
+                    android:text="Femenino"
+                    android:contentDescription="Opción femenino" />
             </RadioGroup>
 
-            <!-- Fecha de Nacimiento (Button para abrir DatePicker) -->
+            <!-- Fecha de Nacimiento -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Fecha de Nacimiento" />
+                android:text="Fecha de Nacimiento"
+                android:contentDescription="Etiqueta para seleccionar fecha de nacimiento" />
 
             <Button
                 android:id="@+id/btn_fecha_nacimiento"
@@ -116,7 +109,8 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/black"
                 android:text="Seleccionar Fecha"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:contentDescription="Botón para seleccionar fecha de nacimiento" />
 
             <!-- Espaciador -->
             <Space
@@ -130,7 +124,8 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#D55B02"
                 android:text="Registrarme"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:contentDescription="Botón para completar registro" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

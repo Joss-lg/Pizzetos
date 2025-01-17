@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/difuminado"
+    android:background="@drawable/naranja_difuminado"
     tools:context=".Realizar_Pedidos">
 
     <!-- Logo Encabezado -->
@@ -209,6 +209,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enviar Pedido"
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/black"
         android:layout_gravity="center"

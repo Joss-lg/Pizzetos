@@ -30,4 +30,12 @@
         <item>Grande($295)</item>
         <item>Familiar($355)</item>
     </string-array>
+
+    <string name="photo_description">Descripción de la foto</string>
+    <string name="descripcion_icono_ubicacion">Ícono de ubicación</string>
+    <string name="hint_latitud">Ingrese latitud</string>
+    <string name="hint_longitud">Ingrese longitud</string>
+
+
+
 </resources>

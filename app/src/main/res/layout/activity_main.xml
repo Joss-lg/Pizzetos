@@ -5,26 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/madera_clarito"
+    android:background="@drawable/back_login"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/register"
-        android:layout_width="300dp"
-        android:layout_height="187dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="Logo de Pizzetos"
-        android:scaleType="fitCenter"
-        android:src="@drawable/pizzetos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Título de la pantalla -->
 
     <!-- Línea decorativa debajo del título -->
 
     <!-- Prueba -->
+
+
     <TextView
         android:id="@+id/tv_login"
         android:layout_width="wrap_content"
@@ -32,7 +22,7 @@
         android:layout_marginTop="248dp"
         android:gravity="center"
         android:text="Iniciar Sesión"
-        android:textColor="#FFFFFF"
+        android:textColor="#0B0A0A"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +31,7 @@
     <View
         android:layout_width="64dp"
         android:layout_height="2dp"
-        android:background="#FFFFFF"
+        android:background="#050505"
         app:layout_constraintTop_toBottomOf="@id/tv_login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +49,7 @@
         android:layout_marginEnd="32dp"
         android:minHeight="48dp"
         android:padding="12dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/tv_login"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +73,7 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="12dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,6 +88,7 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="#EB6B0F"
         android:text="Ingresar"
+        android:textStyle="bold"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,14 +100,15 @@
         android:id="@+id/tv_User_reg_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="¿No tienes una cuenta? Regístrate"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
+        android:textColor="#020202"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
     <Button
         android:id="@+id/btn_admin"
@@ -127,6 +119,7 @@
         android:layout_marginEnd="30dp"
         android:backgroundTint="#EB6B0F"
         android:text="Eres administrador ingresa aqui"
+        android:textStyle="bold"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"

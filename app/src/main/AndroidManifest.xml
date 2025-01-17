@@ -13,6 +13,14 @@
         android:theme="@style/Theme.Pizzetos"
         tools:targetApi="31">
         <activity
+            android:name=".Mapa_prueba"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBxQfKLYXmKMdu4om6URYUecspUiK5w9FM" />
+
+        <activity
             android:name=".Pedidos_recientes"
             android:exported="false" />
         <activity

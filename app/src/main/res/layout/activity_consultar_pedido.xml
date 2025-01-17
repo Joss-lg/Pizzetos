@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -16,10 +17,8 @@
         android:layout_marginTop="32dp"
         android:contentDescription="Logo de Pizzetos"
         android:scaleType="fitCenter"
-        android:src="@drawable/logopizzetos"
+        android:src="@drawable/pizzetos"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,35 +28,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Consultar Pedidos"
-
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/logoHeader"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoHeader" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-
-    <!-- Lista de pedidos -->
-
-    <!-- Botón para regresar -->
+    <!-- RecyclerView para mostrar la lista de pedidos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPedidos"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toTopOf="@id/btnRegresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/tituloConsultarPedido"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnRegresar" />
 
+    <!-- Botón para regresar -->
     <Button
         android:id="@+id/btnRegresar"
         android:layout_width="wrap_content"
@@ -65,10 +57,9 @@
         android:text="Regresar"
         android:textColor="#FFFFFF"
         android:backgroundTint="#000000"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="12dp" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
