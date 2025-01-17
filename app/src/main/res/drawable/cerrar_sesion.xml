@@ -7,12 +7,12 @@
 
     <!-- Rectángulo representando un área o contenedor -->
     <path
-        android:fillColor="#040101"
+        android:fillColor="#FF3B00"
         android:pathData="M3,3h12a2,2 0 0,1 2,2v14a2,2 0 0,1 -2,2H3a2,2 0 0,1 -2,-2V5a2,2 0 0,1 2,-2z"
         android:fillAlpha="0.5" />
 
     <!-- Flecha indicando salida -->
     <path
-        android:fillColor="#FF5722"
+        android:fillColor="#040303"
         android:pathData="M14.5,8.5l2.79,2.79c0.32,0.32 0.32,0.85 0,1.17l-2.79,2.79c-0.32,0.32 -0.85,0.32 -1.17,0s-0.32,-0.85 0,-1.17l1.59,-1.59H7a0.5,0.5 0 0,1 0,-1h7.92l-1.59,-1.59c-0.32,-0.32 -0.32,-0.85 0,-1.17s0.85,-0.32 1.17,0z" />
 </vector>

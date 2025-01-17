@@ -20,7 +20,7 @@
         android:layout_marginTop="16dp"
         android:contentDescription="Logo de Pizzetos"
         android:scaleType="fitCenter"
-        android:src="@drawable/logopizzetos"
+        android:src="@drawable/pizzetos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:layout_width="64dp"
         android:layout_height="2dp"
         android:layout_marginTop="8dp"
-        android:background="#FF914D"
+        android:background="#FDFDFD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Inicio" />
@@ -60,6 +60,7 @@
         android:layout_width="176dp"
         android:layout_height="63dp"
         android:scaleType="centerCrop"
+        android:layout_marginTop="18dp"
         android:src="@drawable/principal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -92,7 +93,7 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/icono_food" />
+                android:src="@drawable/ic_sucu" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -132,7 +133,7 @@
 
             <ImageView
                 android:layout_width="48dp"
-                android:src="@drawable/ic_notas"
+                android:src="@drawable/ic_pedido"
                 android:layout_height="48dp"
                 />
 
@@ -174,7 +175,7 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/icono_consulta" />
+                android:src="@drawable/ic_lupa" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -214,7 +215,7 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/cerrar_sesion" />
+                android:src="@drawable/ic_cerrasesion" />
 
             <TextView
                 android:layout_width="wrap_content"

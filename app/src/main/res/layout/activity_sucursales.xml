@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/madera"
+    android:background="@drawable/suc_back"
     tools:context=".Sucursales">
 
     <!-- Logo de Pizzetos -->
@@ -13,10 +13,10 @@
         android:id="@+id/logoHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="36dp"
         android:contentDescription="Logo de Pizzetos"
         android:scaleType="fitCenter"
-        android:src="@drawable/logopizzetos"
+        android:src="@drawable/pizzetos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="-120dp"
+        android:layout_marginTop="-25dp"
         android:clickable="true"
         android:focusable="true"
         app:cardCornerRadius="15dp"
@@ -46,55 +46,67 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-        android:orientation="vertical"
-        android:padding="22dp">
+            android:orientation="vertical"
+            android:padding="22dp">
 
-        <!-- Icono de ubicación -->
-        <ImageView
+            <!-- Ícono de ubicación -->
+            <ImageView
+                android:id="@+id/icon_ubicacion"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/ic_location"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:contentDescription="@string/descripcion_icono_ubicacion" />
 
-        <!-- Texto de sucursales -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:text="¡VISITA NUESTRA SUCURSAL!"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_gravity="center" />
+            <View
+                android:id="@+id/decorative_line"
+                android:layout_width="64dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="2dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Inicio" />
 
-        <!-- RecyclerView para la galería de fotos -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewGallery"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            android:padding="4dp"
-            android:clipToPadding="false"
-            android:gravity="center"
-        tools:listitem="@layout/item_gallery" />
+            <!-- Texto de sucursales -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:text="¡VISITA NUESTRA SUCURSAL!"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
 
-    </LinearLayout>
+            <!-- RecyclerView para la galería de fotos -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGallery"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:padding="4dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                tools:listitem="@layout/item_gallery" />
 
-</androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+    </androidx.cardview.widget.CardView>
 
-<Button
-android:id="@+id/btn_regresar"
-android:layout_width="200dp"
-android:layout_height="wrap_content"
-android:text="Volver"
-android:textColor="#FFFFFF"
-android:textStyle="bold"
-android:backgroundTint="#ED7C3E"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintBottom_toBottomOf="parent"
-android:layout_marginBottom="56dp"/>
+    <!-- Botón "Volver" -->
+    <Button
+        android:id="@+id/btn_regresar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:backgroundTint="#ED7C3E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="56dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
