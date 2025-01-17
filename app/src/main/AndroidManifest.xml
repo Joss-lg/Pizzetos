@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- Permiso para acceder a Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/pizzetos"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/pizzetos"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzetos"
         tools:targetApi="31">
+        <activity
+            android:name=".ver_pedidos"
+            android:exported="false" />
+        <activity
+            android:name=".card_pedido"
+            android:exported="false" />
         <activity
             android:name=".Mapa_prueba"
             android:exported="false" />
