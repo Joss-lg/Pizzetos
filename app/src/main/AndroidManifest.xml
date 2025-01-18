@@ -15,11 +15,8 @@
         android:theme="@style/Theme.Pizzetos"
         tools:targetApi="31">
         <activity
-            android:name=".ver_pedidos"
-            android:exported="false" />
-        <activity
-            android:name=".card_pedido"
-            android:exported="false" />
+            android:name=".item_pedido"
+            android:exported="true" />
         <activity
             android:name=".Mapa_prueba"
             android:exported="false" />
@@ -42,7 +39,7 @@
             android:exported="true" />
         <activity
             android:name=".Consultar_Pedido"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Realizar_Pedidos"
             android:exported="false" />
@@ -54,7 +51,7 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
