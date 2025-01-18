@@ -41,17 +41,19 @@ public class Realizar_Pedidos extends AppCompatActivity {
         btnEnviar = findViewById(R.id.btn_enviar);
         btnVerPedidos = findViewById(R.id.btn_ver_pedidos);
 
-        // Configurar Spinner Ingredientes
+        // Configurar Spinner Ingredientes con un elemento inicial
         ArrayAdapter<CharSequence> adapterIngredientes = ArrayAdapter.createFromResource(
                 this, R.array.ingredientes_lista, android.R.layout.simple_spinner_item);
         adapterIngredientes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerIngredientes.setAdapter(adapterIngredientes);
+        spinnerIngredientes.setSelection(0); // Mostrar la primera opción ("Seleccione...")
 
-        // Configurar Spinner Tamaño
+        // Configurar Spinner Tamaño con un elemento inicial
         ArrayAdapter<CharSequence> adapterTamano = ArrayAdapter.createFromResource(
                 this, R.array.tamano_lista, android.R.layout.simple_spinner_item);
         adapterTamano.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTamano.setAdapter(adapterTamano);
+        spinnerTamano.setSelection(0); // Mostrar la primera opción ("Seleccione...")
 
         // Configurar acciones de los botones
         btnEnviar.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +86,11 @@ public class Realizar_Pedidos extends AppCompatActivity {
             return;
         }
 
+        if (ingrediente.equals("Seleccione...") || tamano.equals("Seleccione...")) {
+            Toast.makeText(this, "Seleccione un ingrediente y tamaño válidos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         // Obtener método de pago seleccionado
         int selectedPagoId = radioGroupPago.getCheckedRadioButtonId();
         if (selectedPagoId == -1) {
@@ -107,6 +114,20 @@ public class Realizar_Pedidos extends AppCompatActivity {
 
         // Mostrar mensaje final de éxito
         Toast.makeText(this, "Pedido creado con éxito", Toast.LENGTH_SHORT).show();
+
+        // Limpiar los campos del formulario
+        limpiarFormulario();
+    }
+
+    // Método para limpiar los campos del formulario
+    private void limpiarFormulario() {
+        etNombre.setText("");
+        etTelefono.setText("");
+        etCantidad.setText("");
+        etDomicilio.setText("");
+        spinnerIngredientes.setSelection(0); // Volver a "Seleccione..."
+        spinnerTamano.setSelection(0);      // Volver a "Seleccione..."
+        radioGroupPago.clearCheck();        // Desmarcar las opciones de pago
     }
 
     private void verPedidos() {
