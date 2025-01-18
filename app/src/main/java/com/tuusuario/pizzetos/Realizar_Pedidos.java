@@ -15,10 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 
 public class Realizar_Pedidos extends AppCompatActivity {
 
-  // Definir vistas
   private TextInputEditText etNombre, etTelefono, etCantidad, etDomicilio;
   private Spinner spinnerIngredientes, spinnerTamano;
   private Button btnEnviar;
@@ -28,7 +29,6 @@ public class Realizar_Pedidos extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_realizar_pedidos);
 
-    // Inicializar vistas
     etNombre = findViewById(R.id.et_nombre);
     etTelefono = findViewById(R.id.et_telefono);
     etCantidad = findViewById(R.id.et_cantidad);
@@ -37,17 +37,12 @@ public class Realizar_Pedidos extends AppCompatActivity {
     spinnerTamano = findViewById(R.id.spinner_tamano);
     btnEnviar = findViewById(R.id.btn_enviar);
 
-    // Configurar la base de datos
     DatabaseHelper dbHelper = new DatabaseHelper(this);
     SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-    // Insertar datos iniciales
-    insertInitialData(db);
+    insertInitialData(db); // Insertar datos iniciales
+    loadSpinnerData(db);  // Cargar datos en los spinners
 
-    // Cargar datos en los spinners
-    loadSpinnerData(db);
-
-    // Configurar acción del botón
     btnEnviar.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -56,36 +51,34 @@ public class Realizar_Pedidos extends AppCompatActivity {
     });
   }
 
-  // Insertar datos iniciales en SQLite
   private void insertInitialData(SQLiteDatabase db) {
-    insertIngrediente(db, "Queso");
-    insertIngrediente(db, "Jamón");
-    insertIngrediente(db, "Pepperoni");
-    insertTamano(db, "Pequeño");
-    insertTamano(db, "Mediano");
-    insertTamano(db, "Grande");
+    insertIfNotExists(db, "ingredientes", "nombre", "Queso");
+    insertIfNotExists(db, "ingredientes", "nombre", "Jamón");
+    insertIfNotExists(db, "ingredientes", "nombre", "Pepperoni");
+    insertIfNotExists(db, "tamanos", "tamano", "Pequeña ($160)");
+    insertIfNotExists(db, "tamanos", "tamano", "Mediana ($235)");
+    insertIfNotExists(db, "tamanos", "tamano", "Grande ($295)");
   }
 
-  private void insertIngrediente(SQLiteDatabase db, String nombre) {
-    ContentValues values = new ContentValues();
-    values.put("nombre", nombre);
-    db.insert("ingredientes", null, values);
+  private void insertIfNotExists(SQLiteDatabase db, String table, String column, String value) {
+    Cursor cursor = db.rawQuery("SELECT " + column + " FROM " + table + " WHERE " + column + " = ?", new String[]{value});
+    if (!cursor.moveToFirst()) {
+      ContentValues values = new ContentValues();
+      values.put(column, value);
+      db.insert(table, null, values);
+    }
+    cursor.close();
   }
 
-  private void insertTamano(SQLiteDatabase db, String tamano) {
-    ContentValues values = new ContentValues();
-    values.put("tamano", tamano);
-    db.insert("tamanos", null, values);
-  }
-
-  // Cargar datos en los spinners
   private void loadSpinnerData(SQLiteDatabase db) {
+    // Ingredientes
     ArrayList<String> ingredientes = getData(db, "ingredientes", "nombre");
     ArrayAdapter<String> adapterIngredientes = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ingredientes);
     adapterIngredientes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     spinnerIngredientes.setAdapter(adapterIngredientes);
 
-    ArrayList<String> tamanos = getData(db, "tamanos", "tamano");
+    // Tamaños específicos
+    ArrayList<String> tamanos = new ArrayList<>(Arrays.asList("Pequeña ($160)", "Mediana ($235)", "Grande ($295)"));
     ArrayAdapter<String> adapterTamanos = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, tamanos);
     adapterTamanos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     spinnerTamano.setAdapter(adapterTamanos);
@@ -93,7 +86,7 @@ public class Realizar_Pedidos extends AppCompatActivity {
 
   private ArrayList<String> getData(SQLiteDatabase db, String table, String column) {
     ArrayList<String> data = new ArrayList<>();
-    Cursor cursor = db.rawQuery("SELECT " + column + " FROM " + table, null);
+    Cursor cursor = db.rawQuery("SELECT DISTINCT " + column + " FROM " + table, null); // Usa DISTINCT
     if (cursor.moveToFirst()) {
       do {
         data.add(cursor.getString(0));
@@ -103,7 +96,6 @@ public class Realizar_Pedidos extends AppCompatActivity {
     return data;
   }
 
-  // Acción para el botón "Enviar Pedido"
   private void enviarPedido() {
     String nombre = etNombre.getText().toString();
     String telefono = etTelefono.getText().toString();
