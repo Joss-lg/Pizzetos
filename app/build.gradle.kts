@@ -36,6 +36,8 @@ android {
 dependencies {
     annotationProcessor ("androidx.room:room-compiler:2.5.1") // Para Java
     implementation ("androidx.room:room-runtime:2.5.1")
+    implementation ("com.google.android.material:material:1.9.0")
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.cardview:cardview:1.0.0")
     implementation ("com.google.firebase:firebase-auth:22.1.0")
     implementation ("androidx.sqlite:sqlite:2.3.1")
