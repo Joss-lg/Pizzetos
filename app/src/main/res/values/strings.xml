@@ -15,6 +15,7 @@
 
     <!-- Ingredientes -->
     <string-array name="ingredientes_lista">
+        <item>Seleccione</item>
         <item>Pastor</item>
         <item>BBQ</item>
         <item>Mexicana</item>
@@ -25,6 +26,7 @@
 
     <!-- Tamaños -->
     <string-array name="tamano_lista">
+        <item>Seleccione</item>
         <item>Chica($160)</item>
         <item>Mediana($235)</item>
         <item>Grande($295)</item>
