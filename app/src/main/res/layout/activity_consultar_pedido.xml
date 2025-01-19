@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/madera_clarito"
     tools:context=".Consultar_Pedido">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Regresar"
+        android:textStyle="bold"
+        android:backgroundTint="#FF5722"
         app:layout_constraintTop_toBottomOf="@id/recyclerViewPedidos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
