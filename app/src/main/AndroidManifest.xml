@@ -14,12 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzetos"
         tools:targetApi="31">
-        <activity
-            android:name=".ranking"
-            android:exported="false" />
-        <activity
-            android:name=".item_pedido"
-            android:exported="true" />
+
+        <activity android:name=".ActivityResenas"
+        android:exported="false" />
+
         <activity
             android:name=".Mapa_prueba"
             android:exported="false" />
