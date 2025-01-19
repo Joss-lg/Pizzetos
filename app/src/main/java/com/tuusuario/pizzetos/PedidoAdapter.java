@@ -22,15 +22,18 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
     @Override
     public PedidoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_list_item_1, parent, false);
+                .inflate(R.layout.item_pedido_simple, parent, false);
+
         return new PedidoViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PedidoViewHolder holder, int position) {
         String pedido = pedidos.get(position);
-        holder.textViewPedido.setText(pedido);
+        holder.textViewPedidoNombre.setText("Pedido " + (position + 1)); // Ejemplo de título
+        holder.textViewPedidoDetalles.setText(pedido); // Mostrar detalles del pedido
     }
+
 
     @Override
     public int getItemCount() {
@@ -38,11 +41,14 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
     }
 
     static class PedidoViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewPedido;
+        TextView textViewPedidoNombre;
+        TextView textViewPedidoDetalles;
 
         public PedidoViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewPedido = itemView.findViewById(android.R.id.text1);
+            textViewPedidoNombre = itemView.findViewById(R.id.tvPedidoNombre);
+            textViewPedidoDetalles = itemView.findViewById(R.id.tvPedidoDetalles);
         }
     }
 }
+

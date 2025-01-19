@@ -150,7 +150,7 @@
 
     <!-- Tarjeta de Consultar Pedido -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_consultar_pedido"
+        android:id="@+id/card_ranking"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -181,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="CONSULTAR PEDIDO"
+                android:text="RANKING"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -203,7 +203,7 @@
         app:cardBackgroundColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_consultar_pedido">
+        app:layout_constraintTop_toBottomOf="@id/card_ranking">
 
         <LinearLayout
             android:layout_width="match_parent"

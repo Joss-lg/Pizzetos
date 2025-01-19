@@ -9,6 +9,9 @@
         <!-- Agregar estos colores -->
         <color name="colorPrimary">#FF6200EE</color>
         <color name="colorAccent">#FF03DAC5</color>
+    <color name="negro">#000000</color> <!-- Negro puro -->
+    <color name="gris">#808080</color>   <!-- Gris medio -->
+    <color name="blanco">#FFFFFF</color> <!-- Blanco puro -->
 
 
 

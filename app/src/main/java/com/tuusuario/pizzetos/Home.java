@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Home extends AppCompatActivity {
 
-    private CardView cardSucursales, cardRealizarPedido, cardConsultarPedido, cardCerrarSesion;
+    private CardView cardSucursales, cardRealizarPedido, cardRanking, cardCerrarSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class Home extends AppCompatActivity {
         // Enlazar las tarjetas del diseño
         cardSucursales = findViewById(R.id.card_sucursales);
         cardRealizarPedido = findViewById(R.id.card_realizar_pedido);
-        cardConsultarPedido = findViewById(R.id.card_consultar_pedido);
+        cardRanking = findViewById(R.id.card_ranking);
         cardCerrarSesion = findViewById(R.id.card_cerrar_sesion);
 
         // Listener para la tarjeta de sucursales
@@ -45,11 +45,11 @@ public class Home extends AppCompatActivity {
         });
 
         // Listener para la tarjeta de consultar pedido
-        cardConsultarPedido.setOnClickListener(new View.OnClickListener() {
+        cardRanking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Redirigir a la actividad de consultar pedido
-                Intent intent = new Intent(Home.this, Consultar_Pedido.class);
+                Intent intent = new Intent(Home.this, ranking.class);
                 startActivity(intent);
             }
         });
