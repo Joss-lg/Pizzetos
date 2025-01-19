@@ -16,7 +16,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home); // Asegúrate de usar el nombre correcto del layout
+        setContentView(R.layout.activity_home); // Prueba, Asegúrate de usar el nombre correcto del layout
 
         // Enlazar las tarjetas del diseño
         cardSucursales = findViewById(R.id.card_sucursales);
