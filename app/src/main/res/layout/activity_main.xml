@@ -8,13 +8,6 @@
     android:background="@drawable/back_login"
     tools:context=".MainActivity">
 
-    <!-- Título de la pantalla -->
-
-    <!-- Línea decorativa debajo del título -->
-
-    <!-- Prueba -->
-
-
     <TextView
         android:id="@+id/tv_login"
         android:layout_width="wrap_content"
@@ -28,6 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:layout_width="64dp"
         android:layout_height="2dp"
@@ -37,8 +31,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
-
-    <!-- Campo para ingresar el correo -->
     <EditText
         android:id="@+id/correo"
         android:layout_width="0dp"
@@ -56,11 +48,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp" />
 
-    <!-- Campo para ingresar la contraseña -->
-
-    <!-- Botón de ingresar -->
-
-    <!-- Texto de registro -->
     <EditText
         android:id="@+id/contrasena"
         android:layout_width="0dp"
@@ -109,22 +96,4 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_login" />
-
-    <Button
-        android:id="@+id/btn_admin"
-        android:layout_width="0dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="30dp"
-        android:backgroundTint="#EB6B0F"
-        android:text="Eres administrador ingresa aqui"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_User_reg_log" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
