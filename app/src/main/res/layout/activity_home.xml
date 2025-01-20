@@ -175,7 +175,7 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/ic_lupa" />
+                android:src="@drawable/resena" />
 
             <TextView
                 android:layout_width="wrap_content"
