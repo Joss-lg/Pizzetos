@@ -8,15 +8,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 
 public class menuadmin extends AppCompatActivity {
 
     private CardView cardConsultarPedido, cardCerrarSesion;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menuadmin); // Usa el nombre correcto del layout
+        setContentView(R.layout.activity_menuadmin); // Asegúrate de usar el layout correcto
+
+        // Inicializar Firestore
+        db = FirebaseFirestore.getInstance();
 
         // Enlazar las tarjetas del diseño
         cardConsultarPedido = findViewById(R.id.card_consultar_pedido);
@@ -26,9 +33,7 @@ public class menuadmin extends AppCompatActivity {
         cardConsultarPedido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Redirigir a la actividad para consultar pedidos
-                Intent intent = new Intent(menuadmin.this, Pedidos_recientes.class);
-                startActivity(intent);
+                cargarPedidosYRedirigir();
             }
         });
 
@@ -46,5 +51,29 @@ public class menuadmin extends AppCompatActivity {
                 finish(); // Finaliza la actividad actual
             }
         });
+    }
+
+    private void cargarPedidosYRedirigir() {
+        // Simula la consulta a la base de datos (Firebase Firestore)
+        db.collection("pedidos")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    ArrayList<String> listaPedidos = new ArrayList<>();
+
+                    // Extraer los datos de los pedidos
+                    queryDocumentSnapshots.forEach(documentSnapshot -> {
+                        String pedido = documentSnapshot.getString("descripcion");
+                        listaPedidos.add(pedido);
+                    });
+
+                    // Redirigir a Consultar_Pedido y pasar la lista de pedidos
+                    Intent intent = new Intent(menuadmin.this, Consultar_Pedido.class);
+                    intent.putStringArrayListExtra("pedidos", listaPedidos);
+                    startActivity(intent);
+                })
+                .addOnFailureListener(e -> {
+                    // Manejar errores al cargar pedidos
+                    e.printStackTrace();
+                });
     }
 }
