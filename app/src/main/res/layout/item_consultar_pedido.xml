@@ -28,9 +28,10 @@
             android:id="@+id/tvDetallePedido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="Pedido: Pizza hawaiana, 1 refresco"
             android:textSize="14sp"
-            android:textColor="#555555"
+            android:textColor="#333232"
             android:layout_marginTop="4dp" />
 
         <!-- Botones de acción -->
