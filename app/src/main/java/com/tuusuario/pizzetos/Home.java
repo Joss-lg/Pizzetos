@@ -2,7 +2,6 @@ package com.tuusuario.pizzetos;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -11,62 +10,42 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Home extends AppCompatActivity {
 
-    private CardView cardSucursales, cardRealizarPedido, cardRanking, cardCerrarSesion;
+    private CardView cardSucursales, cardRealizarPedido, cardReseñas, cardCerrarSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home); // Prueba, Asegúrate de usar el nombre correcto del layout
+        setContentView(R.layout.activity_home); // Asegúrate de que este layout exista
 
-        // Enlazar las tarjetas del diseño
+        // Enlazar las tarjetas del diseño con sus IDs
         cardSucursales = findViewById(R.id.card_sucursales);
         cardRealizarPedido = findViewById(R.id.card_realizar_pedido);
-        cardRanking = findViewById(R.id.card_ranking);
+        cardReseñas = findViewById(R.id.card_reseñas);
         cardCerrarSesion = findViewById(R.id.card_cerrar_sesion);
 
-        // Listener para la tarjeta de sucursales
-        cardSucursales.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Redirigir a la actividad de sucursales
-                Intent intent = new Intent(Home.this, Sucursales.class);
-                startActivity(intent);
-            }
+        // Configurar eventos de clic para cada tarjeta
+        cardSucursales.setOnClickListener(v -> {
+            // Ir a la actividad de sucursales
+            startActivity(new Intent(Home.this, Sucursales.class));
         });
 
-        // Listener para la tarjeta de realizar pedido
-        cardRealizarPedido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Redirigir a la actividad de realizar pedido
-                Intent intent = new Intent(Home.this, Realizar_Pedidos.class);
-                startActivity(intent);
-            }
+        cardRealizarPedido.setOnClickListener(v -> {
+            // Ir a la actividad de realizar pedidos
+            startActivity(new Intent(Home.this, Realizar_Pedidos.class));
         });
 
-        // Listener para la tarjeta de consultar pedido
-        cardRanking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Redirigir a la actividad de consultar pedido
-                Intent intent = new Intent(Home.this, ranking.class);
-                startActivity(intent);
-            }
+        cardReseñas.setOnClickListener(v -> {
+            // Ir a la actividad de reseñas
+            startActivity(new Intent(Home.this, ActivityResenas.class));
         });
 
-        // Listener para la tarjeta de cerrar sesión
-        cardCerrarSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Cerrar sesión de Firebase
-                FirebaseAuth.getInstance().signOut();
-
-                // Redirigir al inicio de sesión
-                Intent intent = new Intent(Home.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish(); // Finaliza la actividad actual
-            }
+        cardCerrarSesion.setOnClickListener(v -> {
+            // Cerrar sesión de Firebase y redirigir al inicio de sesión
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(Home.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish(); // Finaliza esta actividad
         });
     }
 }

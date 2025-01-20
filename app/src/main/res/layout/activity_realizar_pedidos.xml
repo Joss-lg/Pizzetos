@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/madera_clarito"
+    android:background="@drawable/orangee"
     tools:context=".Realizar_Pedidos">
 
     <!-- Logo Encabezado -->
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Formulario de Pedido"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:text="Seleccione Ingredientes"
         android:textStyle="bold"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,6 +97,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textColor="#FFFFFF"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Seleccione Tamaño"
-        android:textColor="#070606"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,6 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_tamano" />
@@ -173,7 +175,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Método de Pago"
-        android:textColor="@color/black"
+        android:textColor="@color/blanco"
         android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginTop="10dp"
@@ -195,14 +197,17 @@
             android:id="@+id/radio_efectivo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Efectivo" />
+            android:text="Efectivo"
+            android:textColor="#FFFFFF" />
 
         <android.widget.RadioButton
             android:id="@+id/radio_tarjeta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tarjeta" />
+            android:text="Tarjeta"
+            android:textColor="#FFFFFF" />
     </android.widget.RadioGroup>
+
 
     <!-- Botón enviar -->
     <Button

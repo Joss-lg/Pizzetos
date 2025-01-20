@@ -8,18 +8,16 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/pizzetos"
+        android:icon="@drawable/p"
         android:label="@string/app_name"
         android:roundIcon="@drawable/pizzetos"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzetos"
         tools:targetApi="31">
-        <activity
-            android:name=".ranking"
-            android:exported="false" />
-        <activity
-            android:name=".item_pedido"
-            android:exported="true" />
+
+        <activity android:name=".ActivityResenas"
+        android:exported="false" />
+
         <activity
             android:name=".Mapa_prueba"
             android:exported="false" />
